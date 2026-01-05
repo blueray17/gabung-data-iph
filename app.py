@@ -9,7 +9,7 @@ import zipfile
 st.title("📊 Aplikasi Gabung Data Excel Harga IPH")
 
 # Dropdown Tahun dan Bulan
-tahun = st.selectbox("Pilih Tahun", options=[2024, 2025], index=1)
+tahun = st.selectbox("Pilih Tahun", options=[2024, 2025, 2026], index=2)
 bulan = st.selectbox("Pilih Bulan", options=[f"{i:02d}" for i in range(1, 13)], index=0)
 indeks_kolom = []
 indeks_kolom_prop  = []
@@ -25,7 +25,10 @@ if st.button("Proses dan Unduh .xls") and uploaded_files:
 
     semua_data_prop = []
     # Indeks kolom yang ingin diambil dari file Excel (0-based)
-    if tahun == 2025:
+    if tahun == 2026:
+        indeks_kolom_prop = [0, 1, 2, 3, 4, 5]
+        indeks_kolom = [0, 2, 3, 4, 5, 8, 9, 10]
+    elif tahun == 2025:
         indeks_kolom_prop = [0, 1, 2, 3, 4, 5]
         indeks_kolom = [0, 2, 3, 4, 5, 8, 9, 10]
     elif tahun == 2024:
