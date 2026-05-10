@@ -101,7 +101,7 @@ if st.button("Proses dan Unduh .xls") and uploaded_files:
                 today = datetime.today().strftime("%Y-%m-%d")
 
                 for idx, (minggu, data_row) in enumerate(semua_data, start=1):
-                    replaced_komoditas = data_row[4].replace(",",";")
+                    replaced_komoditas = str(data_row[4]).replace(",",";") if data_row[4] is not None else ""
                     baris = [
                         idx,
                         str(tahun),
@@ -141,7 +141,7 @@ if st.button("Proses dan Unduh .xls") and uploaded_files:
                 today = datetime.today().strftime("%Y-%m-%d")
 
                 for idx, (minggu, data_row) in enumerate(semua_data_prop, start=1):
-                    replaced_komoditas = data_row[3].replace(",",";")
+                    replaced_komoditas = str(data_row[3]).replace(",",";") if data_row[3] is not None else ""
                     baris = [
                         idx,
                         str(tahun),
